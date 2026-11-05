@@ -118,6 +118,7 @@ import com.google.refine.expr.functions.strings.MD5;
 import com.google.refine.expr.functions.strings.Match;
 import com.google.refine.expr.functions.strings.NGram;
 import com.google.refine.expr.functions.strings.NGramFingerprint;
+import com.google.refine.expr.functions.strings.Nato;
 import com.google.refine.expr.functions.strings.Normalize;
 import com.google.refine.expr.functions.strings.ParseJson;
 import com.google.refine.expr.functions.strings.ParseUri;
@@ -262,6 +263,7 @@ public class ControlFunctionRegistry {
         registerFunction("fingerprint", new Fingerprint());
         registerFunction("ngramFingerprint", new NGramFingerprint());
         registerFunction("phonetic", new Phonetic());
+        registerFunction("nato", new Nato());
         registerFunction("reinterpret", new Reinterpret());
         registerFunction("jsonize", new Jsonize());
         registerFunction("parseJson", new ParseJson());
