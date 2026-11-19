@@ -15,6 +15,13 @@
     <relativePath>../..</relativePath>
   </parent>
 
+  <properties>
+    <!-- Defaults for the Lecture 16 mutation testing demo, so the PIT command stays short -->
+    <targetClasses>com.google.refine.expr.functions.strings.Nato</targetClasses>
+    <targetTests>com.google.refine.expr.functions.strings.NatoTests</targetTests>
+    <timestampedReports>false</timestampedReports>
+  </properties>
+
   <!-- We need to create the .jar at compilation stage because
        other artifacts (such as "main") need to copy it to a
        subdirectory for Butterfly -->
