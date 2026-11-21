@@ -71,4 +71,16 @@ public class NatoFuzzTests extends GrelTestBase {
             assertTrue(output.codePoints().noneMatch(cp -> cp >= 0xD800 && cp <= 0xDFFF), message);
         }
     }
+
+    @Test
+    public void fuzzCheckWords() {
+        Random random = new Random(SEED);
+        for (int run = 0; run < RUNS; run++) {
+            String input = randomAscii(random);
+            String output = (String) invoke("nato", input);
+            for (String word : output.split(" ")) {
+                assertFalse(word.matches("[A-Za-z0-9]"), "input [" + input + "] gave [" + output + "]");
+            }
+        }
+    }
 }
