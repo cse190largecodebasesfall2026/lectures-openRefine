@@ -52,6 +52,17 @@ public class NatoTests extends GrelTestBase {
     }
 
     @Test
+    public void testFirstAndLastLettersAndDigits() {
+        assertEquals(invoke("nato", "az09"), "Alpha Zulu Zero Nine");
+    }
+
+    @Test
+    public void testSmileyPassesThrough() {
+        // The smiley is outside the basic range, so Java stores it as two chars
+        assertEquals(invoke("nato", "A😀B"), "Alpha 😀 Bravo");
+    }
+
+    @Test
     public void testNullAndEmpty() {
         assertEquals(invoke("nato", (Object) null), "");
         assertEquals(invoke("nato", ""), "");
